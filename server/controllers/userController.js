@@ -38,7 +38,7 @@ export const signup = async(req,res)=>{
 //login user
 export const login = async(req,res)=>{
     const {email, password} =req.body;
-
+     console.log("ji")
     try {
         //no user exists
         const user=await User.findOne({email})
@@ -58,6 +58,7 @@ export const login = async(req,res)=>{
         res.json({success:true, user, token, message:"Login Successful"})
         
     } catch (error) {
+       
         console.log(error)
         res.json({success:false, message:error.message})        
     }

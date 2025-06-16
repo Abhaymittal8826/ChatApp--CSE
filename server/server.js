@@ -37,11 +37,11 @@ io.on("connection", (socket)=>{
     })
 })
 
-//Middleware setup
+
 app.use(express.json({limit:"4mb"}));
 app.use(cors());
 
-//Route Setup
+
 app.use("/api/status", (req,res)=>res.send("server is live"));
 app.use("/api/auth",userRouter);
 app.use("/api/messages",messageRouter);
@@ -55,8 +55,7 @@ if(process.env.NODE_ENV!== "production"){
     const PORT =process.env.PORT || 3000;
     server.listen(PORT, ()=>console.log("Server is running on PORT: "+ PORT));
 }
-
-//export server for vercel
+ 
 export default server;
 
 
