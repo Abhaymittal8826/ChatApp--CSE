@@ -24,9 +24,9 @@ Real-time: Socket.IO
 
 ## Deployment: 
     
-    Frontend https://chat-app-frontend-ruddy-omega.vercel.app/login,
+    Frontend https://chatapp-frontend-kohl-eta.vercel.app/login
             
-    Backend https://chat-app-backend-eta-blue.vercel.app/api/status  
+    Backend https://chatappbackend-iota.vercel.app/api/status
 
 ## Folder Structure  
 /client – React frontend
