@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import assets from '../assets/assets';
 import { authContext } from '../context/authContext';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Login = () => {
 
@@ -12,23 +13,31 @@ const Login = () => {
   const [bio, setBio] = useState("");
   const [isDataSubmitted, setisDataSubmitted] = useState(false);
 
+ 
+
   const navigate = useNavigate();
-  const {login} = useContext(authContext)
+
+  const {login,authUser} = useContext(authContext);
 
   const onSubmitHandler=async(e)=>{
     e.preventDefault();
 
     if(currState==="Sign Up" && !isDataSubmitted){
       setisDataSubmitted(true)
-      return;
+      // return;
     }
 
     const result = await login(currState === "Sign Up"? "signup" : "login",{fullName, email, password, bio})
 
-if(result?.success){
-  navigate('/');
-}  
   }
+
+  
+    useEffect(() => {
+    if (authUser) {
+      navigate("/");
+    }
+  }, [authUser, navigate]);
+
   
   return (
     <div className='flex items-center min-h-screen bg-cover bg-center justify-center gap-8 sm:justify-evenly max-sm:flex-col backdrop-blur-2xl'>  
@@ -85,12 +94,10 @@ if(result?.success){
           <span onClick={()=>{setCurrState("Login"); setisDataSubmitted(false)}} className='text-purple-500 cursor-pointer'> Login here</span> </p>
         ):(
           <p className='text-gray-400'>Create an account. 
-          <span onClick={()=>setCurrState("Sign Up")} className='text-purple-500 cursor-pointer'> Click here</span> </p>
-          
+          <span onClick={()=>setCurrState("Sign Up")} className='text-purple-500 cursor-pointer'> Click here</span> </p>   
         )
       }
        </div>
-    
     </form>
     </div>
   )
