@@ -24,9 +24,9 @@ Real-time: Socket.IO
 
 ## Deployment: 
     
-    Frontend https://chatapp-frontend-kohl-eta.vercel.app/login
+    Frontend https://chatapp-frontend-kohl-eta.vercel.app
             
-    Backend https://chatappbackend-iota.vercel.app/api/status
+    Backend https://chatapp-cse-backend.onrender.com
 
 ## Folder Structure  
 /client – React frontend
@@ -35,10 +35,10 @@ Real-time: Socket.IO
 
 ## Getting Started  
 1️⃣ Clone the repo:  
-`git clone https://github.com/amank010/Chat-App.git && cd Chat-App`  
+`git clone https://github.com/Abhaymittal8826/ChatApp--CSE.git`  
 
 2️⃣ Start Backend:  
-`cd server && npm install && npm run dev`  
+`cd server && npm install && npm start`  
 
 3️⃣ Start Frontend:  
 `cd client && npm install && npm run dev`  
