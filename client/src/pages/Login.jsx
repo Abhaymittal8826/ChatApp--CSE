@@ -24,7 +24,7 @@ const Login = () => {
 
     if(currState==="Sign Up" && !isDataSubmitted){
       setisDataSubmitted(true)
-      // return;
+      return;
     }
 
     const result = await login(currState === "Sign Up"? "signup" : "login",{fullName, email, password, bio})
